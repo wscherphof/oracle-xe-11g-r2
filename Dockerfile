@@ -29,7 +29,7 @@ ENV PATH        $ORACLE_HOME/bin:$PATH
 
 EXPOSE 1521 8080
 
-ADD start                                 /tmp/start
+ADD start /tmp/start
 CMD /tmp/start
 
 
