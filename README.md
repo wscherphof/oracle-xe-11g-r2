@@ -52,7 +52,7 @@ $ docker port db 8080
 ```
 Point a web browser to the `/apex` resorce there - `http://192.168.59.103:49190/apex` (cannot use localhost here)
 
-Workspace=`INTERNAL`, Username=`ADMIN`, Password=`manager`
+Workspace=`INTERNAL`, Username=`ADMIN`, Password=`manager` (must change password after first login)
 
 ![Web management console](https://github.com/wscherphof/oracle-xe-11g-r2/blob/master/apex.png)
 
