@@ -1,4 +1,4 @@
-# Instant Oracle XE database server containers
+# Instant Oracle XE server
 A [Docker](https://www.docker.com/) [image](https://registry.hub.docker.com/u/wscherphof/oracle-xe-11g-r2/) with [Oracle® Database Express Edition 11g Release 2 (11.2)](http://www.oracle.com/technetwork/database/database-technologies/express-edition/overview/index.html) running in [Oracle Linux 7](http://www.oracle.com/us/technologies/linux/overview/index.html)
 - Default XE database on port 1521
 - Web management console on port 8080
@@ -105,3 +105,7 @@ Should you want to modify & build your own image:
 1. Download & unzip the Oracle install package from [Oracle Tech Net](http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html); this will get you a `Disk1` folder
 1. Edit `Disk1/response/xe.rsp` to provide default port numbers & password
 1. `$ docker build -t <[user/]name[:tag]> .`
+
+## Credits
+Thanks to [Rob den Braber](http://blog.grid-it.nl/index.php/2014/05/16/installing-oracle-xe-in-a-docker-image/)
+
