@@ -15,14 +15,14 @@ $ docker run -d -P --name db wscherphof/oracle-xe-11g-r2
 ```
 
 ## Connect
-The deafault password for both the `sys` and the `system` user is `manager`
+The default password for both the `sys` and the `system` user is `manager`
 The XE database port `1521` is bound to the Docker host through `run -P`. To find the host's port:
 ```
 $ docker port db 1521
 0.0.0.0:49189
 ```
 So from the host, you can connect with `system/manager@localhost:49189`
-Though if using Boot2Docker, you need the ip address instead of `localhost`:
+Though if using [Boot2Docker](https://github.com/boot2docker/boot2docker), you need the actual ip address instead of `localhost`:
 ```
 $ boot2docker ip
 
@@ -45,16 +45,16 @@ SQL> |
 ```
 
 ## Manage
-1. Find the host's port bound to the container's `8080` web console port:
+###1. Find the host's port bound to the container's `8080` web console port:
 ```
 $ docker port db 8080
 0.0.0.0:49190
 ```
-2. Point a web browser to `http://192.168.59.103:49190/apex` (cannot use localhost there)
+###2. Point a web browser to `http://192.168.59.103:49190/apex` (cannot use localhost there)
 Workspace=`INTERNAL`
 Username=`ADMIN`
 Password=`manager`
-![Web management console](apex.png)
+![Web management console](https://github.com/wscherphof/oracle-xe-11g-r2/blob/master/apex.png)
 
 ## Monitor
 The container runs a process that at the start sets the container's unique hostname in the Oracle configuration, starts up the database, and then continues to check each minute if the database is still running, and start it if it's not. To see the output of that process:
@@ -101,6 +101,7 @@ There's no ssh deamon or similar configured in the image. If you need a command 
 
 ## Build
 Should you want to modify & build your own image:
+
 1. Download & unzip the Oracle install package from [Oracle Tech Net](http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html); this will get you a `Disk1` folder
 1. Edit `Disk1/response/xe.rsp` to provide default port numbers & password
-1. `docker build -t <[user/]name[:tag]> .`
+1. `$ docker build -t <[user/]name[:tag]> .`
