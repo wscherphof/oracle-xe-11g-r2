@@ -50,7 +50,7 @@ Find the host's port bound to the container's `8080` web console port:
 $ docker port db 8080
 0.0.0.0:49190
 ```
-Point a web browser to the `/apex` resorce there - `http://192.168.59.103:49190/apex` (cannot use localhost here)
+Point a web browser to the `/apex` resource there - `http://192.168.59.103:49190/apex` (cannot use localhost here)
 
 Workspace=`INTERNAL`, Username=`ADMIN`, Password=`manager` (must change password after first login)
 
